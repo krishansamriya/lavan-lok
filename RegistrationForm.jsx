@@ -28,7 +28,17 @@ function buildLines(v) {
     ['Message', v.message.trim() || 'Not provided']
   ]
 }
-
+function Field({ id, label, required, error, children }) {
+  return (
+    <div>
+      <label htmlFor={`f-${id}`} className="mb-1.5 block text-sm font-medium">
+        {label} {required ? <span className="text-sunset" aria-hidden="true">*</span> : <span className="font-normal text-ink/50">(optional)</span>}
+      </label>
+      {children}
+      {error && <p id={`e-${id}`} role="alert" className="mt-1 flex items-center gap-1 text-sm text-red-700"><AlertCircle size={14} />{error}</p>}
+    </div>
+  )
+}
 export default function RegistrationForm() {
   const [v, setV] = useState(initial)
   const [errors, setErrors] = useState({})
@@ -65,15 +75,6 @@ export default function RegistrationForm() {
     setStatus('email')
   }
 
-  const Field = ({ id, label, required, error, children }) => (
-    <div>
-      <label htmlFor={`f-${id}`} className="mb-1.5 block text-sm font-medium">
-        {label} {required ? <span className="text-sunset" aria-hidden="true">*</span> : <span className="font-normal text-ink/50">(optional)</span>}
-      </label>
-      {children}
-      {error && <p id={`e-${id}`} role="alert" className="mt-1 flex items-center gap-1 text-sm text-red-700"><AlertCircle size={14} />{error}</p>}
-    </div>
-  )
   const a11y = (id) => ({ id: `f-${id}`, 'aria-invalid': !!errors[id], 'aria-describedby': errors[id] ? `e-${id}` : undefined, className: `field ${errors[id] ? 'invalid' : ''}` })
 
   return (

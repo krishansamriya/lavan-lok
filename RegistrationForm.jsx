@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { MessageCircle, Mail, Info, AlertCircle } from 'lucide-react'
-import { WHATSAPP_NUMBER, EMAIL, EMAIL_SUBJECT } from '../config'
+import { WHATSAPP_NUMBER, EMAIL, EMAIL_SUBJECT } from './config'
 
 const EXPERIENCES = ['Stay', 'Food', 'Music', 'Complete Experience']
 const initial = { name: '', phone: '', email: '', guests: 2, experience: 'Complete Experience', city: '', message: '', consent: false }

@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+body { @apply bg-salt text-ink font-sans antialiased; }
+:focus-visible { outline: 2px solid #D9622B; outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+.field { @apply w-full rounded-xl border border-ink/20 bg-white/70 px-4 py-3 text-base text-ink placeholder:text-ink/40; }
+.field:focus { @apply border-sunset outline-none ring-2 ring-sunset/30; }
+.field.invalid { @apply border-red-600; }
+.btn { @apply inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-medium tracking-[0.12em] uppercase transition-colors; }

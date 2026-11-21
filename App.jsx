@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { motion, useReducedMotion } from 'framer-motion'
 import { Menu, X, BedDouble, Utensils, Music, Drama, MessageCircle, Mail, ArrowDown, Instagram, Facebook, Youtube } from 'lucide-react'
-import RegistrationForm from './components/RegistrationForm'
+import RegistrationForm from './RegistrationForm.jsx'
 import { IMAGES, GALLERY, SOCIALS, WHATSAPP_NUMBER, WHATSAPP_DISPLAY, EMAIL } from './config'
 
 const LINKS = [['About', '#about'], ['Experience', '#experience'], ['Destination', '#destination'], ['Gallery', '#gallery'], ['Register', '#register'], ['Contact', '#contact']]
